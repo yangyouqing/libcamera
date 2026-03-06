@@ -1,0 +1,9 @@
+[package]
+name = "platform_rtos"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+core_types = { workspace = true }
+core_interfaces = { workspace = true }
+comm = { workspace = true }

@@ -1,0 +1,12 @@
+[package]
+name = "core_types"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+default = []
+json-payload = ["serde", "serde_json_core"]
+
+[dependencies]
+serde = { workspace = true, optional = true }
+serde_json_core = { workspace = true, optional = true }

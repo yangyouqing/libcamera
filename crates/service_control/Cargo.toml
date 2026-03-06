@@ -1,0 +1,10 @@
+[package]
+name = "service_control"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+core_types = { workspace = true }
+core_interfaces = { workspace = true }
+comm = { workspace = true }
+sha2 = { workspace = true }

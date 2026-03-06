@@ -1,0 +1,27 @@
+[package]
+name = "rtos_node"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "rtos_node"
+path = "src/main.rs"
+
+[dependencies]
+core_types = { workspace = true }
+core_interfaces = { workspace = true }
+comm = { workspace = true }
+platform_rtos = { workspace = true }
+service_config = { workspace = true }
+service_storage = { workspace = true }
+service_network = { workspace = true }
+service_time = { workspace = true }
+media_core = { workspace = true }
+service_live = { workspace = true }
+service_talk = { workspace = true }
+service_record = { workspace = true }
+service_playback = { workspace = true }
+service_cloud = { workspace = true }
+service_upgrade = { workspace = true }
+service_control = { workspace = true }
+transport_p2p = { workspace = true }

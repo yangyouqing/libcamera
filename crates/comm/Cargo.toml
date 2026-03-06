@@ -1,0 +1,8 @@
+[package]
+name = "comm"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+core_types = { workspace = true }
+core_interfaces = { workspace = true }

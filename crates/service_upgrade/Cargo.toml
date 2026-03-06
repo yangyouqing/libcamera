@@ -1,0 +1,11 @@
+[package]
+name = "service_upgrade"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+core_types = { workspace = true }
+core_interfaces = { workspace = true }
+comm = { workspace = true }
+ed25519-compact = { workspace = true }
+sha2 = { workspace = true }

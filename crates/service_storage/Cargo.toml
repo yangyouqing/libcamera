@@ -1,0 +1,13 @@
+[package]
+name = "service_storage"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+default = []
+json-payload = ["core_types/json-payload"]
+
+[dependencies]
+core_types = { workspace = true }
+core_interfaces = { workspace = true }
+comm = { workspace = true }

@@ -1,0 +1,89 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/core_types",
+    "crates/core_interfaces",
+    "crates/comm",
+    "crates/media_core",
+    "crates/service_live",
+    "crates/service_talk",
+    "crates/service_record",
+    "crates/service_playback",
+    "crates/service_cloud",
+    "crates/service_upgrade",
+    "crates/service_config",
+    "crates/service_storage",
+    "crates/service_network",
+    "crates/service_time",
+    "crates/service_control",
+    "crates/transport_p2p",
+    "crates/platform_linux",
+    "crates/platform_rtos",
+    "apps/linux_node",
+    "apps/rtos_node",
+    "tests/integration",
+]
+default-members = [
+    "crates/core_types",
+    "crates/core_interfaces",
+    "crates/comm",
+    "crates/media_core",
+    "crates/service_live",
+    "crates/service_talk",
+    "crates/service_record",
+    "crates/service_playback",
+    "crates/service_cloud",
+    "crates/service_upgrade",
+    "crates/service_config",
+    "crates/service_storage",
+    "crates/service_network",
+    "crates/service_time",
+    "crates/service_control",
+    "crates/transport_p2p",
+    "crates/platform_linux",
+    "apps/linux_node",
+    "tests/integration",
+]
+
+# ── Release profile: minimize binary size ──
+[profile.release]
+opt-level = "z"
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+strip = true
+overflow-checks = false
+
+[profile.release.package."*"]
+opt-level = "z"
+
+# ── Dependency whitelist (workspace-level) ──
+[workspace.dependencies]
+# Crypto (security-sensitive, must NOT self-implement)
+ed25519-compact = { version = "2", default-features = false }
+sha2 = { version = "0.10", default-features = false }
+crc32fast = { version = "1", default-features = false }
+
+# Serialization (no_std, optional JSON payload)
+serde = { version = "1", default-features = false, features = ["derive"] }
+serde_json_core = { package = "serde-json-core", version = "0.6", default-features = false }
+
+# Internal crates
+core_types = { path = "crates/core_types" }
+core_interfaces = { path = "crates/core_interfaces" }
+comm = { path = "crates/comm" }
+media_core = { path = "crates/media_core" }
+transport_p2p = { path = "crates/transport_p2p" }
+service_live = { path = "crates/service_live" }
+service_talk = { path = "crates/service_talk" }
+service_record = { path = "crates/service_record" }
+service_playback = { path = "crates/service_playback" }
+service_cloud = { path = "crates/service_cloud" }
+service_upgrade = { path = "crates/service_upgrade" }
+service_config = { path = "crates/service_config" }
+service_storage = { path = "crates/service_storage" }
+service_network = { path = "crates/service_network" }
+service_time = { path = "crates/service_time" }
+service_control = { path = "crates/service_control" }
+platform_linux = { path = "crates/platform_linux" }
+platform_rtos = { path = "crates/platform_rtos" }

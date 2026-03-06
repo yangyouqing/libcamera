@@ -1,0 +1,33 @@
+[package]
+name = "integration_tests"
+version = "0.1.0"
+edition = "2021"
+
+[[test]]
+name = "phase_b"
+path = "tests/phase_b.rs"
+
+[[test]]
+name = "e2e_linux"
+path = "tests/e2e_linux.rs"
+
+[[test]]
+name = "cross_platform"
+path = "tests/cross_platform.rs"
+
+[dev-dependencies]
+core_types = { workspace = true }
+core_interfaces = { workspace = true }
+comm = { workspace = true }
+service_config = { workspace = true }
+service_storage = { workspace = true }
+service_network = { workspace = true }
+service_time = { workspace = true }
+media_core = { workspace = true }
+service_live = { workspace = true }
+service_talk = { workspace = true }
+service_record = { workspace = true }
+service_playback = { workspace = true }
+service_cloud = { workspace = true }
+service_upgrade = { workspace = true }
+service_control = { workspace = true }
